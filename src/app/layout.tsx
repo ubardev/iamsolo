@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import {Open_Sans} from 'next/font/google';
+import { Open_Sans } from 'next/font/google';
 import Footer from '@/components/common/Footer';
 import Header from '@/components/common/Header';
 
@@ -20,7 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-col w-full max-w-screen-2xl mx-auto">
         <Header />
-        <main className="grow">{children}</main>
+        <main className="w-full flex justify-center max-w-screen-xl mx-auto">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
