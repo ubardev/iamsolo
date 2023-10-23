@@ -1,5 +1,5 @@
 import Generation from '@/components/main/Generation';
-import { generations } from './api/data/generation';
+import { generations } from './api/data/generations';
 
 export default function Home() {
   const data = generations.sort((prev, next) => next.sequence - prev.sequence);

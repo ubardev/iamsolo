@@ -6,15 +6,10 @@ import { useState } from 'react';
 import { AiOutlineYoutube } from 'react-icons/ai';
 import { BsBroadcastPin } from 'react-icons/bs';
 import { LuInstagram } from 'react-icons/lu';
+import { OTT_LIST } from '@/constants/common';
 import { IconButton } from '@mui/material';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-
-export enum OTT_LIST {
-  netflix = 'netflix',
-  coupangplay = 'coupangplay',
-  tving = 'tving',
-}
 
 export default function Header() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
