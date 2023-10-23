@@ -3,15 +3,15 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-async function getCategories() {
+async function getGenerations() {
   try {
-    return await prisma.categories.findMany({});
+    return await prisma.generation.findMany({});
   } catch (error) {
     console.error(error);
   }
 }
 
 export async function GET() {
-  const categories = await getCategories();
-  return NextResponse.json(categories);
+  const generations = await getGenerations();
+  return NextResponse.json(generations);
 }
