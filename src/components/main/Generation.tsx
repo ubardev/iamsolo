@@ -10,7 +10,7 @@ export default function Generation({ generation }: IProps) {
       className="flex flex-col justify-end w-80 h-60 p-6 bg-green-300 rounded-xl text-white"
       style={Container}
     >
-      <div className="text-xl">{generation.name}</div>
+      <div className="text-2xl font-bold">{generation.name}</div>
       <div className="text-xs">
         {dayjs(generation.startDate).format('YY.MM.DD')} ~{' '}
         {dayjs(generation.endDate).format('YY.MM.DD')}
