@@ -1,14 +1,17 @@
+'use client';
+
+import useSWR from 'swr';
 import Generation from '@/components/main/Generation';
-import { generations } from './api/data/generations';
 
 export default function Home() {
-  const data = generations.sort((prev, next) => next.sequence - prev.sequence);
+  const { data: generations, isLoading, error } = useSWR('/api/generations');
 
   return (
     <div className="p-6 flex justify-center gap-2 flex-wrap">
-      {data.map((item) => (
-        <Generation key={item.id} generation={item} />
-      ))}
+      {generations &&
+        generations.map((generation: any) => (
+          <Generation key={generation.id} generation={generation} />
+        ))}
     </div>
   );
 }
