@@ -1,16 +1,24 @@
 'use client';
 
 import useSWR from 'swr';
-import Generation from '@/components/main/Generation';
+import GenerationCard from '@/components/main/GenerationCard';
+import { Generation } from '@prisma/client';
+import { useQuery } from '@tanstack/react-query';
 
 export default function Home() {
-  const { data: generations, isLoading, error } = useSWR('/api/generations');
+  // const { data: generations, isLoading, error } = useSWR('/api/generations');
+
+  const { data: generations } = useQuery<Generation[]>(
+    ['/api/generations'],
+    () => fetch('/api/generations').then((res) => res.json()),
+    { select: (data) => data },
+  );
 
   return (
     <div className="p-6 flex justify-center gap-2 flex-wrap">
       {generations &&
-        generations.map((generation: any) => (
-          <Generation key={generation.id} generation={generation} />
+        generations.map((generation: Generation) => (
+          <GenerationCard key={generation.id} generation={generation} />
         ))}
     </div>
   );

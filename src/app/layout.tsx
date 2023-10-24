@@ -3,6 +3,7 @@ import './globals.css';
 import { Open_Sans } from 'next/font/google';
 import Footer from '@/components/common/Footer';
 import Header from '@/components/common/Header';
+import ReactQueryConfigContext from '@/context/ReactQueryConfigContext';
 import SWRConfigContext from '@/context/SWRConfigContext';
 
 const sans = Open_Sans({ subsets: ['latin'] });
@@ -22,7 +23,8 @@ export default function RootLayout({
       <body className="flex flex-col w-full max-w-screen-2xl mx-auto">
         <Header />
         <main className="w-full flex justify-center max-w-screen-xl mx-auto">
-          <SWRConfigContext>{children}</SWRConfigContext>
+          {/* <SWRConfigContext>{children}</SWRConfigContext> */}
+          <ReactQueryConfigContext>{children}</ReactQueryConfigContext>
         </main>
         <Footer />
       </body>

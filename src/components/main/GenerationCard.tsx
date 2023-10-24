@@ -1,7 +1,8 @@
 import dayjs from 'dayjs';
+import { Generation } from '@prisma/client';
 
 interface IProps {
-  generation: any;
+  generation: Generation;
 }
 
 export default function Generation({ generation }: IProps) {
@@ -22,7 +23,7 @@ export default function Generation({ generation }: IProps) {
       <div className="text-2xl font-bold">{generation.name}</div>
       <div className="text-xs">
         {dayjs(generation.startDate).format('YY.MM.DD')} ~{' '}
-        {generation.endDate === '99999999'
+        {dayjs(generation.endDate).format('YY.MM.DD') === '99.12.31'
           ? '진행 중'
           : dayjs(generation.endDate).format('YY.MM.DD')}
       </div>
