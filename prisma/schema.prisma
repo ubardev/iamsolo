@@ -89,10 +89,20 @@ model Wishlist {
 
 model Generation {
   id Int @id @default(autoincrement())
-  sequence Int
   name String
   startDate DateTime
   endDate DateTime
   place String
   image String
+  members Member[]
+  sequence Int
+}
+
+model Member {
+  id Int @id @default(autoincrement())
+  name String
+  generation Generation @relation(fields: [generationId], references: [id], onDelete: Cascade)
+  generationId Int
+  image String
+  sequence Int
 }
