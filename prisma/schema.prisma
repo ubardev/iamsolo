@@ -3,7 +3,7 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "./generated/client"
+  // output   = "./generated/client"
 }
 
 datasource db {
@@ -100,9 +100,18 @@ model Generation {
 
 model Member {
   id Int @id @default(autoincrement())
+  gender String
   name String
+  yearOfBirth String?
+  job String?
+  school String?
+  address String?
+  car String?
+  image String?
+  instgramUrl String?
+  youtubeUrl String?
+  shopUrl String?
   generation Generation @relation(fields: [generationId], references: [id], onDelete: Cascade)
   generationId Int
-  image String
   sequence Int
 }

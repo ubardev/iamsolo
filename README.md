@@ -8,3 +8,6 @@
 
 - DB 테이블 생성
   yarn prisma db push
+
+- DB 테이블 정보 반영
+  yarn prisma generate
