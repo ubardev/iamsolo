@@ -20,9 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="flex flex-col w-full max-w-screen-2xl mx-auto">
+      <body className="flex flex-col w-full max-w-screen-sm mx-auto">
         <Header />
-        <main className="w-full flex justify-center max-w-screen-xl mx-auto">
+        <main className="w-full flex justify-center max-w-screen-sm mx-auto p-4">
           {/* <SWRConfigContext>{children}</SWRConfigContext> */}
           <ReactQueryConfigContext>{children}</ReactQueryConfigContext>
         </main>
