@@ -8,7 +8,7 @@ const generationData: Prisma.GenerationCreateInput[] = [
     startDate: new Date('2021-07-14'),
     endDate: new Date('2021-08-25'),
     place: '강원 동해시',
-    image: '/images/generation/generation-1.png',
+    image: '/images/generation/cover/generation-cover-1.png',
     isDisplay: false,
     sequence: 1,
   },
