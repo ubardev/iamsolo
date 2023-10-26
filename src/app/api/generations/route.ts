@@ -6,6 +6,7 @@ const prisma = new PrismaClient();
 async function getGenerations() {
   try {
     return await prisma.generation.findMany({
+      where: { isDisplay: true },
       orderBy: { sequence: 'desc' },
     });
   } catch (error) {

@@ -11,3 +11,6 @@
 
 - DB 테이블 정보 반영
   yarn prisma generate
+
+- prisma studio 실행
+  yarn prisma studio

@@ -94,7 +94,8 @@ model Generation {
   endDate DateTime
   place String
   image String
-  members Member[]
+  members Member[]            
+  isDisplay Boolean @default(false)
   sequence Int
 }
 
