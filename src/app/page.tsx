@@ -15,7 +15,8 @@ export default function Home() {
   );
 
   return (
-    <div className="p-6 flex justify-center gap-2 flex-wrap">
+    // <div className="p-6 flex justify-center gap-2 flex-wrap">
+    <div className="grid grid-cols-2 gap-4">
       {generations &&
         generations.map((generation: Generation) => (
           <GenerationCard key={generation.id} generation={generation} />
