@@ -28,8 +28,10 @@ export default async function Generation({ params: { generationId } }: IProps) {
     `${API_URL}/api/generations/${generationId}`,
   ).then((res) => res.json());
 
+  const { name, startDate, endDate, place, image, members } = generation;
+
   const newsList = await fetch(
-    `https://openapi.naver.com/v1/search/news.json?query=나는솔로17기&sort=date`,
+    `https://openapi.naver.com/v1/search/news.json?query=나는솔로${name}&sort=date`,
     {
       next: { revalidate: 60 * 60 },
       headers: {
@@ -41,8 +43,6 @@ export default async function Generation({ params: { generationId } }: IProps) {
       },
     },
   ).then((res) => res.json());
-
-  const { name, startDate, endDate, place, image, members } = generation;
 
   return (
     <div>
@@ -115,7 +115,12 @@ export default async function Generation({ params: { generationId } }: IProps) {
         </ul>
       </div>
       <div className="mt-8">
-        <div className="text-xl font-bold">News</div>
+        <div className="flex items-center">
+          <div className="text-xl font-bold">News</div>
+          <div className="pl-4 text-xs text-gray-400">
+            {dayjs(newsList.lastBuildDate).format('MM월 DD일 hh시 mm분')}
+          </div>
+        </div>
         <ul className="my-2 p-2 border-solid border-2 border-gray-200 rounded-lg">
           {newsList?.items.map((news: any, index: any) => (
             <Link key={index} href={news.link} target="_blank">
