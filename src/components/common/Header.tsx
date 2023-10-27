@@ -49,7 +49,7 @@ export default function Header() {
       <Link href="/">
         <h1 className="flex items-center text-3xl font-bold">
           <Image src="/images/logo.png" alt="logo" width={50} height={50} />
-          <div className="ml-4 text-lg">나는 솔로 출연자 정리</div>
+          <div className="ml-4 text-lg">나는 솔로 모든 것</div>
         </h1>
       </Link>
       <nav className="flex gap-4">

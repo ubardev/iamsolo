@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import Image from 'next/image';
+import Link from 'next/link';
 import { API_URL } from '@/constants/common';
 import { getMemberTags } from '@/utils/common';
 import { Generation, Member } from '@prisma/client';
@@ -27,7 +28,19 @@ export default async function Generation({ params: { generationId } }: IProps) {
     `${API_URL}/api/generations/${generationId}`,
   ).then((res) => res.json());
 
-  if (!generation) return;
+  const newsList = await fetch(
+    `https://openapi.naver.com/v1/search/news.json?query=나는솔로17기&sort=date`,
+    {
+      next: { revalidate: 60 * 60 },
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+        'X-Naver-Client-Id':
+          process.env.NEXT_PUBLIC_NAVER_DEVELOPERS_CLIENT_ID || '',
+        'X-Naver-Client-Secret':
+          process.env.NEXT_PUBLIC_NAVER_DEVELOPERS_CLIENT_SECRET || '',
+      },
+    },
+  ).then((res) => res.json());
 
   const { name, startDate, endDate, place, image, members } = generation;
 
@@ -99,6 +112,23 @@ export default async function Generation({ params: { generationId } }: IProps) {
               </li>
             );
           })}
+        </ul>
+      </div>
+      <div className="mt-8">
+        <div className="text-xl font-bold">News</div>
+        <ul className="my-2 p-2 border-solid border-2 border-gray-200 rounded-lg">
+          {newsList?.items.map((news: any, index: any) => (
+            <Link key={index} href={news.link} target="_blank">
+              <li className="px-2 py-2 hover:bg-slate-200 rounded-lg">
+                <div
+                  className="text-lg"
+                  dangerouslySetInnerHTML={{
+                    __html: news.title,
+                  }}
+                />
+              </li>
+            </Link>
+          ))}
         </ul>
       </div>
     </div>
