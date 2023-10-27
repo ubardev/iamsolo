@@ -6,4 +6,9 @@ html,
 body {
   height: 100vh;
   overflow-y: auto;
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
