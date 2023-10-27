@@ -3,6 +3,10 @@ import { Generation } from '@prisma/client';
 
 // import useSWR from 'swr';
 // import { useQuery } from '@tanstack/react-query';
+const API_URL =
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000'
+    : 'https://iamsolo.vercel.app';
 
 export default async function Home({ params }: any) {
   // const { data: generations, isLoading, error } = useSWR('/api/generations');
@@ -13,9 +17,9 @@ export default async function Home({ params }: any) {
   //   { select: (data) => data },
   // );
 
-  const generations = await fetch('http://127.0.0.1:3000/api/generations', {
-    cache: 'force-cache',
-  }).then((res) => res.json());
+  const generations = await fetch(`${API_URL}/api/generations`).then((res) =>
+    res.json(),
+  );
 
   return (
     <div className="grid grid-cols-2 gap-4">
@@ -25,14 +29,4 @@ export default async function Home({ params }: any) {
         ))}
     </div>
   );
-}
-
-export async function generateStaticParams() {
-  const generations = await fetch('http://127.0.0.1:3000/api/generations', {
-    cache: 'force-cache',
-  }).then((res) => res.json());
-
-  return generations.map((generation: Generation) => ({
-    id: generation.id.toString(),
-  }));
 }
