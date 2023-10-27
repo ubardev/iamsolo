@@ -1,10 +1,10 @@
-'use client';
-
 import dayjs from 'dayjs';
 import Image from 'next/image';
+import { API_URL } from '@/constants/common';
 import { getMemberTags } from '@/utils/common';
 import { Generation, Member } from '@prisma/client';
-import { useQuery } from '@tanstack/react-query';
+
+// import { useQuery } from '@tanstack/react-query';
 
 interface IProps {
   params: {
@@ -16,12 +16,16 @@ interface GenerationWithMembers extends Generation {
   members: Member[];
 }
 
-export default function Generation({ params: { generationId } }: IProps) {
-  const { data: generation } = useQuery<GenerationWithMembers>(
-    [`/api/generations/${generationId}`],
-    () => fetch(`/api/generations/${generationId}`).then((res) => res.json()),
-    { select: (data) => data },
-  );
+export default async function Generation({ params: { generationId } }: IProps) {
+  // const { data: generation } = useQuery<GenerationWithMembers>(
+  //   [`/api/generations/${generationId}`],
+  //   () => fetch(`/api/generations/${generationId}`).then((res) => res.json()),
+  //   { select: (data) => data },
+  // );
+
+  const generation: GenerationWithMembers = await fetch(
+    `${API_URL}/api/generations/${generationId}`,
+  ).then((res) => res.json());
 
   if (!generation) return;
 
