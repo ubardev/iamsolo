@@ -10,9 +10,9 @@ export default function Generation({ generation }: IProps) {
   return (
     <Link href={`/generation/${generation.id}`}>
       <div
-        className="flex flex-col items-end justify-end h-52 md:h-40 p-6 bg-green-300 rounded-xl text-white cursor-pointer"
+        className="flex flex-col items-end justify-end h-52 md:h-40 p-4 bg-green-300 rounded-xl text-white cursor-pointer"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.60), rgba(0,0,0,0.50)), url(${
+          backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.50), rgba(0,0,0,0.80)), url(${
             generation.image
               ? generation.image
               : '/images/generation-background.png'

@@ -7,4 +7,4 @@ export enum OTT_LIST {
 export const API_URL =
   process.env.NODE_ENV === 'development'
     ? 'http://localhost:3000'
-    : 'https://iamsolo.vercel.app';
+    : 'https://iamsolo.kr';
