@@ -94,6 +94,7 @@ model Generation {
   endDate DateTime
   place String
   image String
+  videoUrl String?
   members Member[]            
   isDisplay Boolean @default(false)
   sequence Int
@@ -108,6 +109,7 @@ model Member {
   school String?
   address String?
   car String?
+  moreInfo String?
   image String?
   instgramUrl String?
   youtubeUrl String?

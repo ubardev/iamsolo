@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import Link from 'next/link';
+import { AiOutlineInstagram } from 'react-icons/ai';
 import { getMemberTags } from '@/utils/common';
 import { Member } from '@prisma/client';
 
@@ -34,7 +36,16 @@ export default function Members({ members }: IProps) {
                   }}
                 />
                 <div>
-                  <div className="text-lg">{member.name}</div>
+                  <div className="flex items-center text-lg">
+                    <div>{member.name}</div>
+                    {member.instgramUrl && (
+                      <Link href={member.instgramUrl} target="_blank">
+                        <div className="ml-2">
+                          {<AiOutlineInstagram size={24} />}
+                        </div>
+                      </Link>
+                    )}
+                  </div>
                   <div className="flex flex-wrap gap-1">
                     {memberTags.map((tag, index) => (
                       <div
