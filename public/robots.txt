@@ -1,2 +1,11 @@
+# *
 User-agent: *
 Allow: /
+Disallow: /404
+Disallow: /api
+
+# Host
+Host: https://iamsolo.kr
+
+# Sitemaps
+Sitemap: https://iamsolo.kr/sitemap.xml
