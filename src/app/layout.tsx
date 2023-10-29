@@ -3,6 +3,7 @@ import './globals.css';
 import { Open_Sans } from 'next/font/google';
 import Footer from '@/components/common/Footer';
 import Header from '@/components/common/Header';
+import GoogleAnalytics from '@/context/GoogleAnalytics';
 import ReactQueryConfigContext from '@/context/ReactQueryConfigContext';
 import SWRConfigContext from '@/context/SWRConfigContext';
 
@@ -22,6 +23,9 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className="flex flex-col w-full max-w-screen-sm mx-auto">
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
+          <GoogleAnalytics id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+        ) : null}
         <Header />
         <main className="w-full flex justify-center max-w-screen-sm mx-auto p-4">
           {/* <SWRConfigContext>{children}</SWRConfigContext> */}
