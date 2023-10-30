@@ -1,20 +1,24 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { AiOutlineInstagram } from 'react-icons/ai';
+import { start } from 'repl';
+import { GenerationWithMembers } from '@/types/generation';
 import { getMemberTags } from '@/utils/common';
 import { Member } from '@prisma/client';
 
 interface IProps {
-  members: Member[];
+  generationWithMembers: GenerationWithMembers;
 }
 
-export default function Members({ members }: IProps) {
+export default function Members({ generationWithMembers }: IProps) {
+  const { name, startDate, members } = generationWithMembers;
+
   return (
     <div className="mt-8">
       <div className="text-xl font-bold">출연자</div>
       <ul className="my-2 px-4 border-solid border-2 border-gray-200 rounded-lg">
-        {members.map((member) => {
-          const memberTags = getMemberTags(member);
+        {members.map((member: Member) => {
+          const memberTags = getMemberTags({ startDate, member });
 
           return (
             <li
@@ -26,7 +30,7 @@ export default function Members({ members }: IProps) {
               <div className="flex items-center">
                 <Image
                   src={member.image || ''}
-                  alt={member.name}
+                  alt={`나는 솔로 ${name} ${member.name} 프로필 사진`}
                   width={100}
                   height={100}
                   className="rounded-full mr-8"
@@ -41,7 +45,12 @@ export default function Members({ members }: IProps) {
                     {member.instgramUrl && (
                       <Link href={member.instgramUrl} target="_blank">
                         <div className="ml-2">
-                          {<AiOutlineInstagram size={24} />}
+                          {
+                            <AiOutlineInstagram
+                              size={24}
+                              alt={`나는 솔로 ${name} ${member.name} 인스타그램`}
+                            />
+                          }
                         </div>
                       </Link>
                     )}

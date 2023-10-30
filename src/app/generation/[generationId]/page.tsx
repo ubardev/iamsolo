@@ -24,13 +24,13 @@ export default async function Generation({ params: { generationId } }: IProps) {
     `${API_URL}/api/generations/${generationId}`,
   ).then((res) => res.json());
 
-  const { name, members } = generationWithMembers;
+  const { name, startDate, members } = generationWithMembers;
 
   return (
     <div>
       <div className="text-2xl font-bold">{name}</div>
       <Info generationWithMembers={generationWithMembers} />
-      <Members members={members} />
+      <Members generationWithMembers={generationWithMembers} />
       <News generationName={name} />
     </div>
   );
