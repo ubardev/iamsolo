@@ -5,11 +5,35 @@ import { API_URL } from '@/constants/common';
 import { GenerationWithMembers } from '@/types/generation';
 import { Generation, Member } from '@prisma/client';
 
+import type { Metadata, ResolvingMetadata } from 'next';
+
 // import { useQuery } from '@tanstack/react-query';
 
 interface IProps {
   params: {
     generationId: string;
+  };
+}
+
+export async function generateMetadata(
+  { params }: IProps,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const generationId = params.generationId;
+
+  const generation = await fetch(
+    `${API_URL}/api/generations/${generationId}`,
+  ).then((res) => res.json());
+
+  const { name } = generation;
+
+  // const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    title: `나는 솔로 ${name} 정보 - 나솔세계`,
+    // openGraph: {
+    //   images: ['/some-specific-page-image.jpg', ...previousImages],
+    // },
   };
 }
 
