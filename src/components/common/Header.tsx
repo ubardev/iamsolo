@@ -8,10 +8,7 @@ export default function Header() {
   return (
     <header className="flex justify-between items-center p-4">
       <Link href="/">
-        <h1 className="flex items-center text-3xl font-bold">
-          <Image src="/images/logo.png" alt="logo" width={50} height={50} />
-          <div className="ml-4 text-lg">나솔세계</div>
-        </h1>
+        <Image src="/images/logo.png" alt="나솔 세계" width={120} height={34} />
       </Link>
       <nav className="flex gap-4">
         <Link
