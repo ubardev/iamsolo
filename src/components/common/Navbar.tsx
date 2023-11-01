@@ -19,7 +19,7 @@ const menus = [
 
 export default function Navbar() {
   return (
-    <header className="flex justify-between items-center py-4">
+    <header className="flex justify-between items-center p-4">
       <Link href="/">
         <Image src="/images/logo.png" alt="나솔 세계" width={120} height={34} />
       </Link>
