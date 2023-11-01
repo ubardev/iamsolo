@@ -20,18 +20,11 @@ export async function generateMetadata(
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const generationId = params.generationId;
-
-  const generation = await fetch(
-    `${API_URL}/api/generations/${generationId}`,
-  ).then((res) => res.json());
-
-  const { name } = generation;
-
   // const previousImages = (await parent).openGraph?.images || [];
 
   return {
-    title: `나는 솔로 ${name} 정보 - 나솔세계`,
-    description: `나는 솔로 ${name} 방송일자, 촬영장소, 대표동영상, 최신 뉴스 출연자 나이, 직업, 인스타, 차량 등 모든 정보`,
+    title: `나는 솔로 ${generationId}기 정보 - 나솔세계`,
+    description: `나는 솔로 ${generationId}기 방송일자, 촬영장소, 대표동영상, 최신 뉴스 출연자 나이, 직업, 인스타, 차량 등 모든 정보`,
     // openGraph: {
     //   images: ['/some-specific-page-image.jpg', ...previousImages],
     // },
@@ -47,9 +40,10 @@ export default async function Generation({ params: { generationId } }: IProps) {
 
   const generationWithMembers: GenerationWithMembers = await fetch(
     `${API_URL}/api/generations/${generationId}`,
+    { cache: 'no-store' },
   ).then((res) => res.json());
 
-  const { name, startDate, members } = generationWithMembers;
+  const { name } = generationWithMembers;
 
   return (
     <div>
