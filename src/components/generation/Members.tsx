@@ -5,6 +5,7 @@ import { start } from 'repl';
 import { GenerationWithMembers } from '@/types/generation';
 import { getMemberTags } from '@/utils/common';
 import { Member } from '@prisma/client';
+import Avatar from '../common/Avatar';
 
 interface IProps {
   generationWithMembers: GenerationWithMembers;
@@ -28,18 +29,15 @@ export default function Members({ generationWithMembers }: IProps) {
               }`}
             >
               <div className="flex items-center">
-                <Image
-                  src={member.image || ''}
-                  alt={`나는 솔로 ${name} ${member.name} 프로필 사진`}
-                  width={100}
-                  height={100}
-                  className="rounded-full mr-8"
-                  style={{
-                    width: '100px',
-                    height: '100px',
-                  }}
-                />
                 <div>
+                  <Avatar
+                    src={member.image || ''}
+                    alt={`나는 솔로 ${name} ${member.name} 프로필 사진`}
+                    width={16}
+                    height={16}
+                  />
+                </div>
+                <div className="ml-4">
                   <div className="flex items-center text-lg">
                     <div>{member.name}</div>
                     {member.instgramUrl && (
