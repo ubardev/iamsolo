@@ -1,6 +1,11 @@
+'use client';
+
+import { signIn, signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import InstagramIcon from '../ui/icons/InstagramIcon';
+import LoginIcon from '../ui/icons/LoginIcon';
+import LogoutIcon from '../ui/icons/LogoutIcon';
 import YoutubeIcon from '../ui/icons/YoutubeIcon';
 import OttList from './OttList';
 
@@ -18,6 +23,9 @@ const menus = [
 ];
 
 export default function Navbar() {
+  const { data: session } = useSession();
+  const user = session?.user;
+
   return (
     <header className="flex justify-between items-center p-4">
       <Link href="/">
@@ -33,6 +41,15 @@ export default function Navbar() {
             </li>
           ))}
           <OttList />
+          {session ? (
+            <div onClick={() => signOut()}>
+              <LogoutIcon />
+            </div>
+          ) : (
+            <div onClick={() => signIn()}>
+              <LoginIcon />
+            </div>
+          )}
         </ul>
       </nav>
     </header>

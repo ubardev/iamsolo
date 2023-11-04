@@ -3,6 +3,7 @@ import './globals.css';
 import { Open_Sans } from 'next/font/google';
 import Footer from '@/components/common/Footer';
 import Navbar from '@/components/common/Navbar';
+import AuthContext from '@/context/AuthContext';
 import GoogleAnalytics from '@/context/GoogleAnalytics';
 import ReactQueryConfigContext from '@/context/ReactQueryConfigContext';
 import SWRConfigContext from '@/context/SWRConfigContext';
@@ -23,17 +24,19 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className="flex flex-col w-full max-w-screen-sm mx-auto">
-        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
-          <GoogleAnalytics id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
-        ) : null}
-        <header className="sticky top-0 bg-white z-10 border-b">
-          <Navbar />
-        </header>
-        <main className="w-full flex justify-center max-w-screen-sm mx-auto p-4">
-          {/* <SWRConfigContext>{children}</SWRConfigContext> */}
-          <ReactQueryConfigContext>{children}</ReactQueryConfigContext>
-        </main>
-        <Footer />
+        <AuthContext>
+          {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
+            <GoogleAnalytics id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+          ) : null}
+          <header className="sticky top-0 bg-white z-10 border-b">
+            <Navbar />
+          </header>
+          <main className="w-full flex justify-center max-w-screen-sm mx-auto p-4">
+            {/* <SWRConfigContext>{children}</SWRConfigContext> */}
+            <ReactQueryConfigContext>{children}</ReactQueryConfigContext>
+          </main>
+          <Footer />
+        </AuthContext>
       </body>
     </html>
   );
