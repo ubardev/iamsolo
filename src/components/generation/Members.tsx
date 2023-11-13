@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { AiOutlineInstagram } from 'react-icons/ai';
-import { start } from 'repl';
-import { GenerationWithMembers } from '@/types/generation';
-import { getMemberTags } from '@/utils/common';
-import { Member } from '@prisma/client';
+import {AiOutlineInstagram} from 'react-icons/ai';
+import {start} from 'repl';
+import {GenerationWithMembers} from '@/types/generation';
+import {getMemberTags} from '@/utils/common';
+import {Member} from '@prisma/client';
 import Avatar from '../common/Avatar';
 
 interface IProps {
@@ -29,7 +29,7 @@ export default function Members({ generationWithMembers }: IProps) {
               }`}
             >
               <div className="flex items-center">
-                <div>
+                <div className="w-18 h-18">
                   <Avatar
                     src={member.image || ''}
                     alt={`나는 솔로 ${name} ${member.name} 프로필 사진`}

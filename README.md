@@ -2,7 +2,7 @@
 
 ## 사용기술
 
-- Next.js 13, tailwindcss, planetscale(MySQL DB), prisma(ORM), react-query
+- Next.js 13 final version, tailwindcss, planetscale(MySQL DB), prisma(ORM), react-query
 
 ## 주요기능
 
@@ -21,14 +21,16 @@
 - ~~도메인 변경(iamsolo.kr)~~
 - ~~방문자수 노출 추가~~
 - ~~ga 추가~~
+- ~~API 분기 .env.local로 처리~~
+- https://pagespeed.web.dev/를 활용한 성능 개선
+- 로그인/회원가입(Google oAuth, NextAuth)
 - canonical(Naver 권장) tag 추가
 - SEO처리
 - 즐겨찾기 유도 기능 추가
 - 공유하기 기능 추가
-- 구글 애드센스 알아보기
-- 로그인/회원가입(Google oAuth, NextAuth)
+- 구글 애드센스 추가
 - 기수별 게시판 or 한줄 코멘트 기능 추가
-- 이미지 CDN처리(유로 서비스 사용?)
+- 이미지 CDN처리(유로 서비스 사용? / imgbb)
 - UI/UX변경
 - 출연자별 상세페이지 추가
 - 좋아요/싫어요
@@ -49,3 +51,8 @@
 
 - png -> ico 파일 변환
   https://convertio.co/kr/png-ico/
+
+## 참고자료
+
+- Google oAuth
+  https://console.cloud.google.com/
