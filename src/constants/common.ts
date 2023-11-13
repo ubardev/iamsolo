@@ -4,7 +4,4 @@ export enum OTT_LIST {
   tving = 'tving',
 }
 
-export const API_URL =
-  process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3000'
-    : 'https://iamsolo.kr';
+export const API_URL = process.env.API_URL;

@@ -1,6 +1,6 @@
 import GenerationCard from '@/components/main/GenerationCard';
-import { API_URL } from '@/constants/common';
-import { Generation } from '@prisma/client';
+import {API_URL} from '@/constants/common';
+import {Generation} from '@prisma/client';
 
 // import useSWR from 'swr';
 // import { useQuery } from '@tanstack/react-query';
