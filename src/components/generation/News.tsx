@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import Link from 'next/link';
+import { parseElapsedTimeByTimeago } from '@/utils/date';
 
 interface IProps {
   generationName: String;
@@ -25,7 +26,7 @@ export default async function News({ generationName }: IProps) {
       <div className="flex items-center">
         <div className="text-xl font-bold">News</div>
         <div className="pl-4 text-xs text-gray-400">
-          {dayjs(newsList.lastBuildDate).format('MM월 DD일 HH시 mm분')} Updated
+          {parseElapsedTimeByTimeago(newsList.lastBuildDate)} 업데이트
         </div>
       </div>
       <ul className="my-2 p-2 border-solid border-2 border-gray-200 rounded-lg">
