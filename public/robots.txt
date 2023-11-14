@@ -8,3 +8,4 @@ Host: https://iamsolo.kr
 
 # Sitemaps
 Sitemap: https://iamsolo.kr/sitemap.xml
+Sitemap: https://iamsolo.kr/server-sitemap-index.xml
