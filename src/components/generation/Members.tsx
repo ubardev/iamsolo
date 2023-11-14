@@ -29,12 +29,12 @@ export default function Members({ generationWithMembers }: IProps) {
               }`}
             >
               <div className="flex items-center">
-                <div className="w-18 h-18">
+                <div className="w-20 h-20">
                   <Avatar
                     src={member.image || ''}
                     alt={`나는 솔로 ${name} ${member.name} 프로필 사진`}
-                    width={16}
-                    height={16}
+                    width={20}
+                    height={20}
                   />
                 </div>
                 <div className="ml-4">

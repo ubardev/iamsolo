@@ -22,10 +22,10 @@
 - ~~방문자수 노출 추가~~
 - ~~ga 추가~~
 - ~~API 분기 .env.local로 처리~~
-- https://pagespeed.web.dev/를 활용한 성능 개선
-- 로그인/회원가입(Google oAuth, NextAuth)
+- ~~로그인/회원가입(Google oAuth, NextAuth)~~
 - canonical(Naver 권장) tag 추가
 - SEO처리
+- https://pagespeed.web.dev/를 활용한 성능 개선
 - 즐겨찾기 유도 기능 추가
 - 공유하기 기능 추가
 - 구글 애드센스 추가

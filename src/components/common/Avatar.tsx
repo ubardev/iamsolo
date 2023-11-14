@@ -16,6 +16,7 @@ export default function Avatar({ src, alt, width, height }: IProps) {
         rounded-full bg-slate-500
       `}
     >
+      {/* 프로필 이미지 url이 다양해서 next/img 사용하기 않음 */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         className="rounded-full p-[0.1rem]"

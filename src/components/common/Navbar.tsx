@@ -1,12 +1,13 @@
 'use client';
 
-import { signIn, signOut, useSession } from 'next-auth/react';
+import {signIn, signOut, useSession} from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import InstagramIcon from '../ui/icons/InstagramIcon';
 import LoginIcon from '../ui/icons/LoginIcon';
 import LogoutIcon from '../ui/icons/LogoutIcon';
 import YoutubeIcon from '../ui/icons/YoutubeIcon';
+import Avatar from './Avatar';
 import OttList from './OttList';
 
 const menus = [
@@ -41,9 +42,10 @@ export default function Navbar() {
             </li>
           ))}
           <OttList />
-          {session ? (
-            <div onClick={() => signOut()}>
-              <LogoutIcon />
+          {user ? (
+            <div className="w-7 h-7" onClick={() => signOut()}>
+              {/* <LogoutIcon /> */}
+              <Avatar src={user?.image} />
             </div>
           ) : (
             <div onClick={() => signIn()}>
