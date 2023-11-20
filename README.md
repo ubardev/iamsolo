@@ -6,7 +6,11 @@
 
 ## 사용기술
 
-- Next.js 13 final version, tailwindcss, planetscale(MySQL DB), prisma(ORM), react-query
+- 프레임워크 : Next.js 13 final version
+- 언어/주요 라이브러리 : Javascript, React-query, prisma(ORM), tailwindcss
+- DB : MySQL(planetscale 서비스 사용)
+- 배포 : vercel
+- 이미지 CDN : imgbb(무료), cloudflare(유료) 고민 중
 
 ## 주요기능
 
