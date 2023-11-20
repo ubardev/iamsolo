@@ -1,5 +1,9 @@
 # 나는 솔로 정보 정리 프로젝트
 
+## 서비스 URL
+
+- https://iamsolo.kr/
+
 ## 사용기술
 
 - Next.js 13 final version, tailwindcss, planetscale(MySQL DB), prisma(ORM), react-query
@@ -35,6 +39,7 @@
 - 출연자별 상세페이지 추가
 - 좋아요/싫어요
 - 인기순위
+- next-sitemap 적용(package.json > script > "postbuild": "next-sitemap" 추가해야함)
 
 ## 프로젝트 관련 명령어
 

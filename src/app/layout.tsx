@@ -23,15 +23,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className="flex flex-col w-full max-w-screen-sm mx-auto">
+      <body className="w-full bg-neutral-50 overflow-auto">
         <AuthContext>
           {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
             <GoogleAnalytics id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
           ) : null}
           <header className="sticky top-0 bg-white z-10 border-b">
-            <Navbar />
+            <div className="max-w-screen-xl mx-auto">
+              <Navbar />
+            </div>
           </header>
-          <main className="w-full flex justify-center max-w-screen-sm mx-auto p-4">
+          <main className="w-full flex justify-center p-4">
             {/* <SWRConfigContext>{children}</SWRConfigContext> */}
             <ReactQueryConfigContext>{children}</ReactQueryConfigContext>
           </main>
