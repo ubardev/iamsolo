@@ -1,6 +1,6 @@
 import GenerationCard from '@/components/main/GenerationCard';
-import {API_URL} from '@/constants/common';
-import {Generation} from '@prisma/client';
+import { API_URL } from '@/constants/common';
+import { Generation } from '@prisma/client';
 
 // import useSWR from 'swr';
 // import { useQuery } from '@tanstack/react-query';
@@ -20,7 +20,7 @@ export default async function Home({ params }: any) {
   ).then((res) => res.json());
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full max-w-screen-xl">
       {generations &&
         generations.map((generation: Generation) => (
           <GenerationCard key={generation.id} generation={generation} />

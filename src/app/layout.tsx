@@ -37,7 +37,9 @@ export default function RootLayout({
             {/* <SWRConfigContext>{children}</SWRConfigContext> */}
             <ReactQueryConfigContext>{children}</ReactQueryConfigContext>
           </main>
-          <Footer />
+          <div className="mt-2 border-t-2">
+            <Footer />
+          </div>
         </AuthContext>
       </body>
     </html>
