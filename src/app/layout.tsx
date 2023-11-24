@@ -11,9 +11,21 @@ import SWRConfigContext from '@/context/SWRConfigContext';
 const sans = Open_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: '나솔세계 - 나는 솔로 모든 정보',
+  title: {
+    default: '나솔세계 - 나는 솔로 모든 정보',
+    template: '%s - 나솔세계',
+  },
   description:
-    '나는 솔로 출연자 정보, 인스타, 소식 등 나는 솔로의 모든 정보를 모았습니다.',
+    '나는 솔로 출연자 인스타, 나이, 직업, 사는 곳, 최신 소식 등 모든 정보',
+  openGraph: {
+    title: {
+      default: '나솔세계 - 나는 솔로 모든 정보',
+      template: '%s - 나솔세계',
+    },
+    description:
+      '나는 솔로 출연자 인스타, 나이, 직업, 사는 곳, 최신 소식 등 모든 정보',
+    images: [`/images/generation-background.png`],
+  },
 };
 
 export default function RootLayout({
