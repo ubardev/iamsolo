@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import {AiOutlineInstagram} from 'react-icons/ai';
-import {start} from 'repl';
-import {GenerationWithMembers} from '@/types/generation';
-import {getMemberTags} from '@/utils/common';
-import {Member} from '@prisma/client';
+import { AiOutlineInstagram } from 'react-icons/ai';
+import { start } from 'repl';
+import { GenerationWithMembers } from '@/types/generation';
+import { getMemberTags } from '@/utils/common';
+import { Member } from '@prisma/client';
 import Avatar from '../common/Avatar';
 
 interface IProps {
@@ -46,7 +46,7 @@ export default function Members({ generationWithMembers }: IProps) {
                           {
                             <AiOutlineInstagram
                               size={24}
-                              alt={`나는 솔로 ${name} ${member.name} 인스타그램`}
+                              title={`나는 솔로 ${name} ${member.name} 인스타그램`}
                             />
                           }
                         </div>

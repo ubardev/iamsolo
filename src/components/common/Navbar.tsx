@@ -1,6 +1,6 @@
 'use client';
 
-import {signIn, signOut, useSession} from 'next-auth/react';
+import { signIn, signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import InstagramIcon from '../ui/icons/InstagramIcon';
@@ -41,16 +41,18 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          <OttList />
+          <li>
+            <OttList />
+          </li>
           {user ? (
-            <div className="w-7 h-7" onClick={() => signOut()}>
+            <li className="w-7 h-7" onClick={() => signOut()}>
               {/* <LogoutIcon /> */}
               <Avatar src={user?.image} />
-            </div>
+            </li>
           ) : (
-            <div onClick={() => signIn()}>
+            <li onClick={() => signIn()}>
               <LoginIcon />
-            </div>
+            </li>
           )}
         </ul>
       </nav>

@@ -5,5 +5,5 @@ interface IProps {
 }
 
 export default function LoginIcon({ size = 24 }: IProps) {
-  return <BiLogIn size={size} />;
+  return <BiLogIn size={size} title="로그인" />;
 }

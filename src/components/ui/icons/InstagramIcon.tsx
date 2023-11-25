@@ -5,5 +5,5 @@ interface IProps {
 }
 
 export default function InstagramIcon({ size = 24 }: IProps) {
-  return <LuInstagram size={size} />;
+  return <LuInstagram size={size} title="인스타그램" />;
 }

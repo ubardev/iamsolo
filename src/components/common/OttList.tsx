@@ -54,7 +54,7 @@ export default function OttList() {
           padding: 0,
         }}
       >
-        <BsBroadcastPin size={24} />
+        <BsBroadcastPin size={24} title="방송보기" />
       </IconButton>
       <Menu
         id="basic-menu"

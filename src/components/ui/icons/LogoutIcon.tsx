@@ -5,5 +5,5 @@ interface IProps {
 }
 
 export default function LogoutIcon({ size = 24 }: IProps) {
-  return <BiLogOut size={size} />;
+  return <BiLogOut size={size} title="로그아웃" />;
 }

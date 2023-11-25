@@ -5,5 +5,5 @@ interface IProps {
 }
 
 export default function YoutubeIcon({ size = 24 }: IProps) {
-  return <AiOutlineYoutube size={size} />;
+  return <AiOutlineYoutube size={size} title="유튜브" />;
 }
