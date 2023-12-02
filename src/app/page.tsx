@@ -14,10 +14,9 @@ export default async function Home({ params }: any) {
   //   { select: (data) => data },
   // );
 
-  // SSG처리
-  const generations: Generation[] = await fetch(
-    `${API_URL}/api/generations`,
-  ).then((res) => res.json());
+  const generations: Generation[] = await fetch(`${API_URL}/api/generations`, {
+    cache: 'no-store',
+  }).then((res) => res.json());
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full max-w-screen-xl">
