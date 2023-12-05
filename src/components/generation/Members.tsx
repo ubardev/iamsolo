@@ -6,6 +6,8 @@ import { GenerationWithMembers } from '@/types/generation';
 import { getMemberTags } from '@/utils/common';
 import { Member } from '@prisma/client';
 import Avatar from '../common/Avatar';
+import LikeIcon from '../ui/icons/LikeIcon';
+import DislikeIcon from '../ui/icons/DislikeIcon';
 
 interface IProps {
   generationWithMembers: GenerationWithMembers;
@@ -28,14 +30,28 @@ export default function Members({ generationWithMembers }: IProps) {
                 member.gender === 'male' ? ' bg-blue-100' : 'bg-pink-100'
               }`}
             >
-              <div className="flex items-center">
-                <div className="w-20 h-20">
+              <div className="flex items-center p-1">
+                <div className="w-20 h-24">
                   <Avatar
                     src={member.image || ''}
                     alt={`나는 솔로 ${name} ${member.name} 프로필 사진`}
                     width={20}
                     height={20}
                   />
+                  <div className="flex gap-1 pt-1">
+                    <button className="flex justify-center w-10 bg-blue-500 rounded-2xl">
+                      <div className="flex items-center gap-1 text-white">
+                        <LikeIcon size={12} color="white" />
+                        <p className="text-sm">0</p>
+                      </div>
+                    </button>
+                    <button className="flex justify-center w-10 bg-red-500 rounded-2xl">
+                      <div className="flex items-center text-white">
+                        <DislikeIcon size={12} color="white" />
+                        <p className="text-sm">0</p>
+                      </div>
+                    </button>
+                  </div>
                 </div>
                 <div className="ml-4">
                   <div className="flex items-center text-lg">
