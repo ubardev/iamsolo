@@ -19,7 +19,7 @@ export default async function Home({ params }: any) {
   }).then((res) => res.json());
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full max-w-screen-xl">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full max-w-screen-md">
       {generations &&
         generations.map((generation: Generation) => (
           <GenerationCard key={generation.id} generation={generation} />
