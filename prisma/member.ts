@@ -14,6 +14,8 @@ const memberData: Prisma.MemberCreateInput[] = [
     image: '/images/member/1/1기-영수.png',
     generation: { connect: { id: 1 } },
     sequence: 1,
+    likeCount: 0,
+    dislikeCount: 0,
   },
   {
     name: '영식',
@@ -26,6 +28,8 @@ const memberData: Prisma.MemberCreateInput[] = [
     image: '/images/member/1/1기-영식.png',
     generation: { connect: { id: 1 } },
     sequence: 2,
+    likeCount: 0,
+    dislikeCount: 0,
   },
   {
     name: '영철',
@@ -38,6 +42,8 @@ const memberData: Prisma.MemberCreateInput[] = [
     image: '',
     generation: { connect: { id: 1 } },
     sequence: 3,
+    likeCount: 0,
+    dislikeCount: 0,
   },
   {
     name: '영호',
@@ -50,6 +56,8 @@ const memberData: Prisma.MemberCreateInput[] = [
     image: '',
     generation: { connect: { id: 1 } },
     sequence: 4,
+    likeCount: 0,
+    dislikeCount: 0,
   },
   {
     name: '정수',
@@ -62,6 +70,8 @@ const memberData: Prisma.MemberCreateInput[] = [
     image: '',
     generation: { connect: { id: 1 } },
     sequence: 5,
+    likeCount: 0,
+    dislikeCount: 0,
   },
   {
     name: '종수',
@@ -74,6 +84,8 @@ const memberData: Prisma.MemberCreateInput[] = [
     image: '',
     generation: { connect: { id: 1 } },
     sequence: 6,
+    likeCount: 0,
+    dislikeCount: 0,
   },
   {
     name: '정식',
@@ -86,6 +98,8 @@ const memberData: Prisma.MemberCreateInput[] = [
     image: '',
     generation: { connect: { id: 1 } },
     sequence: 7,
+    likeCount: 0,
+    dislikeCount: 0,
   },
   {
     name: '순자',
@@ -98,6 +112,8 @@ const memberData: Prisma.MemberCreateInput[] = [
     image: '',
     generation: { connect: { id: 1 } },
     sequence: 8,
+    likeCount: 0,
+    dislikeCount: 0,
   },
   {
     name: '영숙',
@@ -110,6 +126,8 @@ const memberData: Prisma.MemberCreateInput[] = [
     image: '',
     generation: { connect: { id: 1 } },
     sequence: 9,
+    likeCount: 0,
+    dislikeCount: 0,
   },
   {
     name: '영순',
@@ -122,6 +140,8 @@ const memberData: Prisma.MemberCreateInput[] = [
     image: '',
     generation: { connect: { id: 1 } },
     sequence: 10,
+    likeCount: 0,
+    dislikeCount: 0,
   },
   {
     name: '영자',
@@ -134,6 +154,8 @@ const memberData: Prisma.MemberCreateInput[] = [
     image: '',
     generation: { connect: { id: 1 } },
     sequence: 11,
+    likeCount: 0,
+    dislikeCount: 0,
   },
   {
     name: '정숙',
@@ -146,6 +168,8 @@ const memberData: Prisma.MemberCreateInput[] = [
     image: '',
     generation: { connect: { id: 1 } },
     sequence: 12,
+    likeCount: 0,
+    dislikeCount: 0,
   },
   {
     name: '정순',
@@ -158,6 +182,8 @@ const memberData: Prisma.MemberCreateInput[] = [
     image: '',
     generation: { connect: { id: 1 } },
     sequence: 13,
+    likeCount: 0,
+    dislikeCount: 0,
   },
   {
     name: '정자',
@@ -170,6 +196,8 @@ const memberData: Prisma.MemberCreateInput[] = [
     image: '',
     generation: { connect: { id: 1 } },
     sequence: 14,
+    likeCount: 0,
+    dislikeCount: 0,
   },
 ];
 
