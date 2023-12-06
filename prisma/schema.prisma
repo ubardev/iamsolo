@@ -155,5 +155,21 @@ model Member {
   shopUrl String?
   generation Generation @relation(fields: [generationId], references: [id], onDelete: Cascade)
   generationId Int
+  likeCount Int
+  dislikeCount Int
   sequence Int
+}
+
+model LikeMember {
+  id Int @id @default(autoincrement())
+  userId String @unique
+  generationId Int
+  memberIds String?
+}
+
+model DislikeMember {
+  id Int @id @default(autoincrement())
+  userId String @unique
+  generationId Int
+  memberIds String?
 }

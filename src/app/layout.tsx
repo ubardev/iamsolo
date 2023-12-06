@@ -46,8 +46,8 @@ export default function RootLayout({
             </div>
           </header>
           <main className="w-full flex justify-center p-4">
-            {/* <SWRConfigContext>{children}</SWRConfigContext> */}
-            <ReactQueryConfigContext>{children}</ReactQueryConfigContext>
+            <SWRConfigContext>{children}</SWRConfigContext>
+            {/* <ReactQueryConfigContext>{children}</ReactQueryConfigContext> */}
           </main>
           <div className="mt-2 border-t-2">
             <Footer />

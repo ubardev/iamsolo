@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { AiOutlineInstagram } from 'react-icons/ai';
@@ -14,7 +16,14 @@ interface IProps {
 }
 
 export default function Members({ generationWithMembers }: IProps) {
-  const { name, startDate, members } = generationWithMembers;
+  const { id, name, startDate, members } = generationWithMembers;
+
+  const handleLike = (memberId: number) => {
+    fetch('/api/members/like', {
+      method: 'PUT',
+      body: JSON.stringify({ generationId: id, memberId }),
+    });
+  };
 
   return (
     <div className="mt-8">
@@ -39,7 +48,10 @@ export default function Members({ generationWithMembers }: IProps) {
                     height={20}
                   />
                   <div className="flex gap-1 pt-1">
-                    <button className="flex justify-center w-10 bg-blue-500 rounded-2xl">
+                    <button
+                      className="flex justify-center w-10 bg-blue-500 rounded-2xl"
+                      onClick={() => handleLike(member.id)}
+                    >
                       <div className="flex items-center gap-1 text-white">
                         <LikeIcon size={12} color="white" />
                         <p className="text-sm">0</p>
