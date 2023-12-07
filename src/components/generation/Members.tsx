@@ -1,28 +1,54 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { AiOutlineInstagram } from 'react-icons/ai';
-import { start } from 'repl';
 import { GenerationWithMembers } from '@/types/generation';
 import { getMemberTags } from '@/utils/common';
 import { Member } from '@prisma/client';
 import Avatar from '../common/Avatar';
 import LikeIcon from '../ui/icons/LikeIcon';
 import DislikeIcon from '../ui/icons/DislikeIcon';
+import useSWR, { useSWRConfig } from 'swr';
+import { signIn, useSession } from 'next-auth/react';
 
 interface IProps {
   generationWithMembers: GenerationWithMembers;
 }
 
 export default function Members({ generationWithMembers }: IProps) {
+  const { data: session } = useSession();
   const { id, name, startDate, members } = generationWithMembers;
+  const emotionApiKey = `/api/generations/${id}/members/emotion-count`;
+
+  const { data: emotionCounts, isLoading: loading } =
+    useSWR<any>(emotionApiKey);
+
+  const { mutate } = useSWRConfig();
 
   const handleLike = (memberId: number) => {
+    if (!session?.user) {
+      return signIn();
+    }
+
     fetch('/api/members/like', {
       method: 'PUT',
       body: JSON.stringify({ generationId: id, memberId }),
-    });
+    }).then(() => mutate(emotionApiKey));
+  };
+
+  const handleDislike = (memberId: number) => {
+    if (!session?.user) {
+      return signIn();
+    }
+
+    fetch('/api/members/emotion', {
+      method: 'PUT',
+      body: JSON.stringify({
+        emotionType: 'dislike',
+        generationId: id,
+        memberId,
+      }),
+    }).then(() => mutate(emotionApiKey));
   };
 
   return (
@@ -54,13 +80,24 @@ export default function Members({ generationWithMembers }: IProps) {
                     >
                       <div className="flex items-center gap-1 text-white">
                         <LikeIcon size={12} color="white" />
-                        <p className="text-sm">{member.likeCount}</p>
+                        <p className="text-sm">
+                          {emotionCounts
+                            ? emotionCounts[member.id].likeCount
+                            : 0}
+                        </p>
                       </div>
                     </button>
-                    <button className="flex justify-center w-10 bg-red-500 rounded-2xl">
+                    <button
+                      className="flex justify-center w-10 bg-red-500 rounded-2xl"
+                      onClick={() => handleDislike(member.id)}
+                    >
                       <div className="flex items-center text-white">
                         <DislikeIcon size={12} color="white" />
-                        <p className="text-sm">{member.dislikeCount}</p>
+                        <p className="text-sm">
+                          {emotionCounts
+                            ? emotionCounts[member.id].dislikeCount
+                            : 0}
+                        </p>
                       </div>
                     </button>
                   </div>
