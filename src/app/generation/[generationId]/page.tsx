@@ -27,7 +27,9 @@ export async function generateMetadata(
     openGraph: {
       title: `나는 솔로 ${generationId}기 정보`,
       description: `나는 솔로 ${generationId}기 방송일자, 촬영장소, 대표동영상, 최신 뉴스, 출연자 나이, 직업, 인스타, 차량 등 모든 정보`,
-      images: [`/images/generation/cover/generation-cover-${generationId}.png`],
+      images: [
+        `/images/generation/cover/generation-cover-${generationId}.webp`,
+      ],
     },
   };
 }
