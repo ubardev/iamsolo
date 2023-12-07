@@ -49,6 +49,21 @@ async function updateLikeMember(
       },
     });
 
+    const member = await prisma.member.findUnique({
+      where: {
+        id: Number(memberId),
+      },
+    });
+
+    const memberResponse = await prisma.member.update({
+      where: {
+        id: Number(memberId),
+      },
+      data: {
+        likeCount: (member?.likeCount || 0) + (isLiked ? -1 : 1),
+      },
+    });
+
     return response?.memberIds?.split(',');
   } catch (error) {
     console.error(error);

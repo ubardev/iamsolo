@@ -54,13 +54,13 @@ export default function Members({ generationWithMembers }: IProps) {
                     >
                       <div className="flex items-center gap-1 text-white">
                         <LikeIcon size={12} color="white" />
-                        <p className="text-sm">0</p>
+                        <p className="text-sm">{member.likeCount}</p>
                       </div>
                     </button>
                     <button className="flex justify-center w-10 bg-red-500 rounded-2xl">
                       <div className="flex items-center text-white">
                         <DislikeIcon size={12} color="white" />
-                        <p className="text-sm">0</p>
+                        <p className="text-sm">{member.dislikeCount}</p>
                       </div>
                     </button>
                   </div>
