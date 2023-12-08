@@ -20,22 +20,18 @@ interface IProps {
 export default function Members({ generationWithMembers }: IProps) {
   const { data: session } = useSession();
   const { id: generationId, name, startDate, members } = generationWithMembers;
-  const { emotionCounts, setEmotion } = useEmotions(generationId);
+  const { emotionCounts, myEmotions, setEmotion } = useEmotions(generationId);
+  const myLikeMembers = myEmotions ? myEmotions.myLikeMembers.split(',') : [];
+  const myDislikeMembers = myEmotions
+    ? myEmotions.myDislikeMembers.split(',')
+    : [];
 
-  const handleLike = (memberId: number) => {
+  const handleEmotion = (emotionType: EMOTION_TYPE, memberId: number) => {
     if (!session?.user) {
       return signIn();
     }
 
-    setEmotion(EMOTION_TYPE.like, memberId);
-  };
-
-  const handleDislike = (memberId: number) => {
-    if (!session?.user) {
-      return signIn();
-    }
-
-    setEmotion(EMOTION_TYPE.dislike, memberId);
+    setEmotion(emotionType, memberId);
   };
 
   return (
@@ -62,8 +58,14 @@ export default function Members({ generationWithMembers }: IProps) {
                   />
                   <div className="flex gap-1 pt-1">
                     <button
-                      className="flex justify-center w-10 bg-blue-500 rounded-2xl"
-                      onClick={() => handleLike(member.id)}
+                      className={`flex justify-center w-10 ${
+                        myLikeMembers.includes(String(member.id))
+                          ? `bg-blue-500`
+                          : 'bg-blue-300'
+                      } rounded-2xl`}
+                      onClick={() =>
+                        handleEmotion(EMOTION_TYPE.like, member.id)
+                      }
                     >
                       <div className="flex items-center gap-1 text-white">
                         <LikeIcon size={12} color="white" />
@@ -75,8 +77,14 @@ export default function Members({ generationWithMembers }: IProps) {
                       </div>
                     </button>
                     <button
-                      className="flex justify-center w-10 bg-red-500 rounded-2xl"
-                      onClick={() => handleDislike(member.id)}
+                      className={`flex justify-center w-10 ${
+                        myDislikeMembers.includes(String(member.id))
+                          ? `bg-red-500`
+                          : 'bg-red-300'
+                      } rounded-2xl`}
+                      onClick={() =>
+                        handleEmotion(EMOTION_TYPE.dislike, member.id)
+                      }
                     >
                       <div className="flex items-center text-white">
                         <DislikeIcon size={12} color="white" />
