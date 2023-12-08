@@ -8,7 +8,6 @@ import { Member } from '@prisma/client';
 import Avatar from '../common/Avatar';
 import LikeIcon from '../ui/icons/LikeIcon';
 import DislikeIcon from '../ui/icons/DislikeIcon';
-import useSWR, { useSWRConfig } from 'swr';
 import { signIn, useSession } from 'next-auth/react';
 import useEmotions from '@/hooks/emotions';
 import { EMOTION_TYPE } from '@/constants/common';
@@ -21,17 +20,22 @@ export default function Members({ generationWithMembers }: IProps) {
   const { data: session } = useSession();
   const { id: generationId, name, startDate, members } = generationWithMembers;
   const { emotionCounts, myEmotions, setEmotion } = useEmotions(generationId);
+
   const myLikeMembers = myEmotions ? myEmotions.myLikeMembers.split(',') : [];
   const myDislikeMembers = myEmotions
     ? myEmotions.myDislikeMembers.split(',')
     : [];
 
-  const handleEmotion = (emotionType: EMOTION_TYPE, memberId: number) => {
+  const handleEmotion = (
+    emotionType: EMOTION_TYPE,
+    memberId: number,
+    isAlreadyEmotion: boolean,
+  ) => {
     if (!session?.user) {
       return signIn();
     }
 
-    setEmotion(emotionType, memberId);
+    setEmotion(emotionType, memberId, isAlreadyEmotion);
   };
 
   return (
@@ -40,6 +44,8 @@ export default function Members({ generationWithMembers }: IProps) {
       <ul className="my-2 px-4 border-solid border-2 border-gray-200 rounded-lg">
         {members.map((member: Member) => {
           const memberTags = getMemberTags({ startDate, member });
+          const isLikeMember = myLikeMembers.includes(String(member.id));
+          const isDislikeMember = myDislikeMembers.includes(String(member.id));
 
           return (
             <li
@@ -59,12 +65,14 @@ export default function Members({ generationWithMembers }: IProps) {
                   <div className="flex gap-1 pt-1">
                     <button
                       className={`flex justify-center w-10 ${
-                        myLikeMembers.includes(String(member.id))
-                          ? `bg-blue-500`
-                          : 'bg-blue-300'
+                        isLikeMember ? `bg-blue-500` : 'bg-blue-300'
                       } rounded-2xl`}
                       onClick={() =>
-                        handleEmotion(EMOTION_TYPE.like, member.id)
+                        handleEmotion(
+                          EMOTION_TYPE.like,
+                          member.id,
+                          isLikeMember,
+                        )
                       }
                     >
                       <div className="flex items-center gap-1 text-white">
@@ -78,12 +86,14 @@ export default function Members({ generationWithMembers }: IProps) {
                     </button>
                     <button
                       className={`flex justify-center w-10 ${
-                        myDislikeMembers.includes(String(member.id))
-                          ? `bg-red-500`
-                          : 'bg-red-300'
+                        isDislikeMember ? `bg-red-500` : 'bg-red-300'
                       } rounded-2xl`}
                       onClick={() =>
-                        handleEmotion(EMOTION_TYPE.dislike, member.id)
+                        handleEmotion(
+                          EMOTION_TYPE.dislike,
+                          member.id,
+                          isDislikeMember,
+                        )
                       }
                     >
                       <div className="flex items-center text-white">
