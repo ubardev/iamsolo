@@ -10,6 +10,8 @@ import LikeIcon from '../ui/icons/LikeIcon';
 import DislikeIcon from '../ui/icons/DislikeIcon';
 import useSWR, { useSWRConfig } from 'swr';
 import { signIn, useSession } from 'next-auth/react';
+import useEmotions from '@/hooks/emotions';
+import { EMOTION_TYPE } from '@/constants/common';
 
 interface IProps {
   generationWithMembers: GenerationWithMembers;
@@ -17,23 +19,15 @@ interface IProps {
 
 export default function Members({ generationWithMembers }: IProps) {
   const { data: session } = useSession();
-  const { id, name, startDate, members } = generationWithMembers;
-  const emotionApiKey = `/api/generations/${id}/members/emotion-count`;
-
-  const { data: emotionCounts, isLoading: loading } =
-    useSWR<any>(emotionApiKey);
-
-  const { mutate } = useSWRConfig();
+  const { id: generationId, name, startDate, members } = generationWithMembers;
+  const { emotionCounts, setEmotion } = useEmotions(generationId);
 
   const handleLike = (memberId: number) => {
     if (!session?.user) {
       return signIn();
     }
 
-    fetch('/api/members/like', {
-      method: 'PUT',
-      body: JSON.stringify({ generationId: id, memberId }),
-    }).then(() => mutate(emotionApiKey));
+    setEmotion(EMOTION_TYPE.like, memberId);
   };
 
   const handleDislike = (memberId: number) => {
@@ -41,14 +35,7 @@ export default function Members({ generationWithMembers }: IProps) {
       return signIn();
     }
 
-    fetch('/api/members/emotion', {
-      method: 'PUT',
-      body: JSON.stringify({
-        emotionType: 'dislike',
-        generationId: id,
-        memberId,
-      }),
-    }).then(() => mutate(emotionApiKey));
+    setEmotion(EMOTION_TYPE.dislike, memberId);
   };
 
   return (

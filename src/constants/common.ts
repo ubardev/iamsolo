@@ -5,3 +5,8 @@ export enum OTT_LIST {
 }
 
 export const API_URL = process.env.API_URL;
+
+export enum EMOTION_TYPE {
+  like = 'like',
+  dislike = 'dislike',
+}
