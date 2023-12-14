@@ -1,7 +1,5 @@
 'use client';
 
-import Link from 'next/link';
-import { AiOutlineInstagram } from 'react-icons/ai';
 import { GenerationWithMembers } from '@/types/generation';
 import { getMemberTags } from '@/utils/common';
 import { Member } from '@prisma/client';
@@ -11,6 +9,8 @@ import DislikeIcon from '../ui/icons/DislikeIcon';
 import { signIn, useSession } from 'next-auth/react';
 import useEmotions from '@/hooks/emotions';
 import { EMOTION_TYPE } from '@/constants/common';
+import Tags from '@/components/generation/member/Tags';
+import NameAndLinks from '@/components/generation/member/NameAndLinks';
 
 interface IProps {
   generationWithMembers: GenerationWithMembers;
@@ -108,40 +108,12 @@ export default function Members({ generationWithMembers }: IProps) {
                   </div>
                 </div>
                 <div className="ml-4">
-                  <div className="flex items-center text-lg">
-                    <div>{member.name}</div>
-                    {member.instgramUrl && (
-                      <Link href={member.instgramUrl} target="_blank">
-                        <div className="ml-2">
-                          {
-                            <AiOutlineInstagram
-                              size={24}
-                              title={`나는 솔로 ${name} ${member.name} 인스타그램`}
-                            />
-                          }
-                        </div>
-                      </Link>
-                    )}
-                  </div>
-                  <div className="flex flex-wrap gap-1">
-                    {memberTags.map((tag, index) =>
-                      tag.indexOf('(?)') !== -1 ? (
-                        <div
-                          key={index}
-                          className="pl-2 pr-2 bg-slate-300 text-slate-400 rounded-2xl"
-                        >
-                          {tag}
-                        </div>
-                      ) : (
-                        <div
-                          key={index}
-                          className="pl-2 pr-2 bg-pink-600 text-white rounded-2xl"
-                        >
-                          {tag}
-                        </div>
-                      ),
-                    )}
-                  </div>
+                  <NameAndLinks
+                    ganerationName={name}
+                    memberName={member.name}
+                    instgramUrl={member.instgramUrl ?? undefined}
+                  />
+                  <Tags memberTags={memberTags} />
                 </div>
               </div>
             </li>
