@@ -3,12 +3,11 @@
 import { signIn, signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import InstagramIcon from '../ui/icons/InstagramIcon';
-import LoginIcon from '../ui/icons/LoginIcon';
-import LogoutIcon from '../ui/icons/LogoutIcon';
-import YoutubeIcon from '../ui/icons/YoutubeIcon';
-import Avatar from './Avatar';
-import OttList from './OttList';
+import InstagramIcon from '@/components/ui/icons/InstagramIcon';
+import LoginIcon from '@/components/ui/icons/LoginIcon';
+import YoutubeIcon from '@/components/ui/icons/YoutubeIcon';
+import Avatar from '@/components/common/Avatar';
+import OttList from '@/components/common/OttList';
 
 const menus = [
   {

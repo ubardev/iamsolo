@@ -1,6 +1,5 @@
 import dayjs from 'dayjs';
 import Image from 'next/image';
-import { relative } from 'path';
 import { GenerationWithMembers } from '@/types/generation';
 
 interface IProps {

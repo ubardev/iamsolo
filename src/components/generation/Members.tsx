@@ -3,9 +3,9 @@
 import { GenerationWithMembers } from '@/types/generation';
 import { getMemberTags } from '@/utils/common';
 import { Member } from '@prisma/client';
-import Avatar from '../common/Avatar';
-import LikeIcon from '../ui/icons/LikeIcon';
-import DislikeIcon from '../ui/icons/DislikeIcon';
+import Avatar from '@/components/common/Avatar';
+import LikeIcon from '@/components/ui/icons/LikeIcon';
+import DislikeIcon from '@/components/ui/icons/DislikeIcon';
 import { signIn, useSession } from 'next-auth/react';
 import useEmotions from '@/hooks/emotions';
 import { EMOTION_TYPE } from '@/constants/common';
