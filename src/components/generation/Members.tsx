@@ -112,6 +112,8 @@ export default function Members({ generationWithMembers }: IProps) {
                     ganerationName={name}
                     memberName={member.name}
                     instgramUrl={member.instgramUrl ?? undefined}
+                    youtubeUrl={member.youtubeUrl ?? undefined}
+                    shopUrl={member.shopUrl ?? undefined}
                   />
                   <Tags memberTags={memberTags} />
                 </div>
