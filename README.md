@@ -16,11 +16,14 @@
 
 - 풀스택 프로젝트
 - SSG, CSR 구분하여 사용
-- Next.js 13 app directory 사용에 맞춰 각종 라이브러리 연동(swr, react-query 등)
+- Next.js 13 App routing 사용에 맞춰 각종 라이브러리 연동(swr, react-query 등)
 - 네이버 뉴스 연동(API조회 Limit(25,000/일)을 초과하기 않기 위한 ISR적용 1시간)
 - 모바일 / 태블릿&PC 사이즈 반응형 처리
 - 가능한 모든 영역에 Typescript 적용
-- Naver Search Advisor 등록
+- SEO 요소 적용
+  - Naver Search Advisor 등록
+  - Google Site 등록
+  - 모든 페이지 Title, Description, OG태그들 적용
 
 ## 해야할일
 
