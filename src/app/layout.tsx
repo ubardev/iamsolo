@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko">
+    <html lang="ko" className={sans.className}>
       <body className="w-full bg-neutral-50 overflow-auto">
         <AuthContext>
           {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (

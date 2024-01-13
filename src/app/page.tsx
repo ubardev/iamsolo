@@ -5,7 +5,7 @@ import { Generation } from '@prisma/client';
 // import useSWR from 'swr';
 // import { useQuery } from '@tanstack/react-query';
 
-export default async function Home({ params }: any) {
+export default async function Home() {
   // const { data: generations, isLoading, error } = useSWR('/api/generations');
 
   // const { data: generations } = useQuery<Generation[]>(
