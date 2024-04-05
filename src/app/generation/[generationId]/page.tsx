@@ -9,6 +9,15 @@ import type { Metadata, ResolvingMetadata } from 'next';
 
 // import { useQuery } from '@tanstack/react-query';
 
+import {member_12} from "@/data/members/12";
+import {member_13} from "@/data/members/13";
+import {member_14} from "@/data/members/14";
+import {member_15} from "@/data/members/15";
+import {member_16} from "@/data/members/16";
+import {member_17} from "@/data/members/17";
+import {member_18} from "@/data/members/18";
+import {member_19} from "@/data/members/19";
+
 interface IProps {
   params: {
     generationId: string;
@@ -41,10 +50,42 @@ export default async function Generation({ params: { generationId } }: IProps) {
   //   { select: (data) => data },
   // );
 
-  const generationWithMembers: GenerationWithMembers = await fetch(
-    `${API_URL}/api/generations/${generationId}`,
-    { cache: 'no-store' },
-  ).then((res) => res.json());
+  // const generationWithMembers: GenerationWithMembers = await fetch(
+  //   `${API_URL}/api/generations/${generationId}`,
+  //   { cache: 'no-store' },
+  // ).then((res) => res.json());
+  let generationWithMembers: any;
+
+  switch (generationId) {
+    case '12':
+      generationWithMembers = member_12;
+      break;
+    case '13':
+      generationWithMembers = member_13;
+      break;
+    case '14':
+      generationWithMembers = member_14;
+      break;
+    case '15':
+      generationWithMembers = member_15;
+      break;
+    case '16':
+      generationWithMembers = member_16;
+      break;
+    case '17':
+      generationWithMembers = member_17;
+      break;
+    case '18':
+      generationWithMembers = member_18;
+      break;
+    case '19':
+      generationWithMembers = member_19;
+      break;
+    default:
+      break;
+  }
+
+
 
   const { name } = generationWithMembers;
 
