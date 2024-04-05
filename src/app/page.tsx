@@ -1,6 +1,7 @@
 import GenerationCard from '@/components/main/GenerationCard';
 import { API_URL } from '@/constants/common';
 import { Generation } from '@prisma/client';
+import { generationsData } from '@/data/generations';
 
 // import useSWR from 'swr';
 // import { useQuery } from '@tanstack/react-query';
@@ -14,9 +15,11 @@ export default async function Home() {
   //   { select: (data) => data },
   // );
 
-  const generations: Generation[] = await fetch(`${API_URL}/api/generations`, {
-    cache: 'no-store',
-  }).then((res) => res.json());
+  // const generations: Generation[] = await fetch(`${API_URL}/api/generations`, {
+  //   cache: 'no-store',
+  // }).then((res) => res.json());
+
+  const generations :any = generationsData;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full max-w-screen-md">
