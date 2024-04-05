@@ -62,50 +62,50 @@ export default function Members({ generationWithMembers }: IProps) {
                     width={20}
                     height={20}
                   />
-                  <div className="flex gap-1 pt-1">
-                    <button
-                      className={`flex justify-center w-10 ${
-                        isLikeMember ? `bg-blue-500` : 'bg-blue-300'
-                      } rounded-2xl`}
-                      onClick={() =>
-                        handleEmotion(
-                          EMOTION_TYPE.like,
-                          member.id,
-                          isLikeMember,
-                        )
-                      }
-                    >
-                      <div className="flex items-center gap-1 text-white">
-                        <LikeIcon size={12} color="white" />
-                        <p className="text-sm">
-                          {emotionCounts
-                            ? emotionCounts[member.id].likeCount
-                            : 0}
-                        </p>
-                      </div>
-                    </button>
-                    <button
-                      className={`flex justify-center w-10 ${
-                        isDislikeMember ? `bg-red-500` : 'bg-red-300'
-                      } rounded-2xl`}
-                      onClick={() =>
-                        handleEmotion(
-                          EMOTION_TYPE.dislike,
-                          member.id,
-                          isDislikeMember,
-                        )
-                      }
-                    >
-                      <div className="flex items-center text-white">
-                        <DislikeIcon size={12} color="white" />
-                        <p className="text-sm">
-                          {emotionCounts
-                            ? emotionCounts[member.id].dislikeCount
-                            : 0}
-                        </p>
-                      </div>
-                    </button>
-                  </div>
+                  {/*<div className="flex gap-1 pt-1">*/}
+                  {/*  <button*/}
+                  {/*    className={`flex justify-center w-10 ${*/}
+                  {/*      isLikeMember ? `bg-blue-500` : 'bg-blue-300'*/}
+                  {/*    } rounded-2xl`}*/}
+                  {/*    onClick={() =>*/}
+                  {/*      handleEmotion(*/}
+                  {/*        EMOTION_TYPE.like,*/}
+                  {/*        member.id,*/}
+                  {/*        isLikeMember,*/}
+                  {/*      )*/}
+                  {/*    }*/}
+                  {/*  >*/}
+                  {/*    <div className="flex items-center gap-1 text-white">*/}
+                  {/*      <LikeIcon size={12} color="white" />*/}
+                  {/*      <p className="text-sm">*/}
+                  {/*        {emotionCounts*/}
+                  {/*          ? emotionCounts[member.id].likeCount*/}
+                  {/*          : 0}*/}
+                  {/*      </p>*/}
+                  {/*    </div>*/}
+                  {/*  </button>*/}
+                  {/*  <button*/}
+                  {/*    className={`flex justify-center w-10 ${*/}
+                  {/*      isDislikeMember ? `bg-red-500` : 'bg-red-300'*/}
+                  {/*    } rounded-2xl`}*/}
+                  {/*    onClick={() =>*/}
+                  {/*      handleEmotion(*/}
+                  {/*        EMOTION_TYPE.dislike,*/}
+                  {/*        member.id,*/}
+                  {/*        isDislikeMember,*/}
+                  {/*      )*/}
+                  {/*    }*/}
+                  {/*  >*/}
+                  {/*    <div className="flex items-center text-white">*/}
+                  {/*      <DislikeIcon size={12} color="white" />*/}
+                  {/*      <p className="text-sm">*/}
+                  {/*        {emotionCounts*/}
+                  {/*          ? emotionCounts[member.id].dislikeCount*/}
+                  {/*          : 0}*/}
+                  {/*      </p>*/}
+                  {/*    </div>*/}
+                  {/*  </button>*/}
+                  {/*</div>*/}
                 </div>
                 <div className="ml-4">
                   <NameAndLinks

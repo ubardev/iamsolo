@@ -43,16 +43,16 @@ export default function Navbar() {
           <li>
             <OttList />
           </li>
-          {user ? (
-            <li className="w-7 h-7" onClick={() => signOut()}>
-              {/* <LogoutIcon /> */}
-              <Avatar src={user?.image} />
-            </li>
-          ) : (
-            <li onClick={() => signIn()}>
-              <LoginIcon />
-            </li>
-          )}
+          {/*{user ? (*/}
+          {/*  <li className="w-7 h-7" onClick={() => signOut()}>*/}
+          {/*    /!* <LogoutIcon /> *!/*/}
+          {/*    <Avatar src={user?.image} />*/}
+          {/*  </li>*/}
+          {/*) : (*/}
+          {/*  <li onClick={() => signIn()}>*/}
+          {/*    <LoginIcon />*/}
+          {/*  </li>*/}
+          {/*)}*/}
         </ul>
       </nav>
     </header>
