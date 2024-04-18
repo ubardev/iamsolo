@@ -81,6 +81,7 @@ export default async function Generation({ params: { generationId } }: IProps) {
       break;
     case '19':
       generationWithMembers = member_19;
+      break;
     case '20':
       generationWithMembers = member_20;
       break;
