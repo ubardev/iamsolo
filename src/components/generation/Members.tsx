@@ -19,24 +19,24 @@ interface IProps {
 export default function Members({ generationWithMembers }: IProps) {
   const { data: session } = useSession();
   const { id: generationId, name, startDate, members } = generationWithMembers;
-  const { emotionCounts, myEmotions, setEmotion } = useEmotions(generationId);
+  // const { emotionCounts, myEmotions, setEmotion } = useEmotions(generationId);
 
-  const myLikeMembers = myEmotions ? myEmotions.myLikeMembers.split(',') : [];
-  const myDislikeMembers = myEmotions
-    ? myEmotions.myDislikeMembers.split(',')
-    : [];
+  // const myLikeMembers = myEmotions ? myEmotions.myLikeMembers.split(',') : [];
+  // const myDislikeMembers = myEmotions
+  //   ? myEmotions.myDislikeMembers.split(',')
+  //   : [];
 
-  const handleEmotion = (
-    emotionType: EMOTION_TYPE,
-    memberId: number,
-    isAlreadyEmotion: boolean,
-  ) => {
-    if (!session?.user) {
-      return signIn();
-    }
-
-    setEmotion(emotionType, memberId, isAlreadyEmotion);
-  };
+  // const handleEmotion = (
+  //   emotionType: EMOTION_TYPE,
+  //   memberId: number,
+  //   isAlreadyEmotion: boolean,
+  // ) => {
+  //   if (!session?.user) {
+  //     return signIn();
+  //   }
+  //
+  //   setEmotion(emotionType, memberId, isAlreadyEmotion);
+  // };
 
   return (
     <div className="mt-8">
@@ -44,8 +44,8 @@ export default function Members({ generationWithMembers }: IProps) {
       <ul className="my-2 px-4 border-solid border-2 border-gray-200 rounded-lg">
         {members.map((member: Member) => {
           const memberTags = getMemberTags({ startDate, member });
-          const isLikeMember = myLikeMembers.includes(String(member.id));
-          const isDislikeMember = myDislikeMembers.includes(String(member.id));
+          // const isLikeMember = myLikeMembers.includes(String(member.id));
+          // const isDislikeMember = myDislikeMembers.includes(String(member.id));
 
           return (
             <li

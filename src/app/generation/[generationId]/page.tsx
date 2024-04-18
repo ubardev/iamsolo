@@ -17,6 +17,7 @@ import {member_16} from "@/data/members/16";
 import {member_17} from "@/data/members/17";
 import {member_18} from "@/data/members/18";
 import {member_19} from "@/data/members/19";
+import {member_20} from "@/data/members/20";
 
 interface IProps {
   params: {
@@ -80,6 +81,8 @@ export default async function Generation({ params: { generationId } }: IProps) {
       break;
     case '19':
       generationWithMembers = member_19;
+    case '20':
+      generationWithMembers = member_20;
       break;
     default:
       break;

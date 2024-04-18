@@ -1,12 +1,23 @@
 export const generationsData = [
     {
+        "id": 20,
+        "name": "20기",
+        "startDate": "2024-04-24T00:00:00.000Z",
+        "endDate": "9999-12-31T00:00:00.000Z",
+        "place": "미정",
+        "image": "/images/generation/cover/generation-cover-20.webp",
+        "videoUrl": "https://www.youtube.com/embed/ze6Zrnp2Pag",
+        "isDisplay": true,
+        "sequence": 20
+    },
+    {
         "id": 19,
         "name": "19기",
-        "startDate": "2023-02-14T00:00:00.000Z",
-        "endDate": "9999-12-31T00:00:00.000Z",
+        "startDate": "2024-02-14T00:00:00.000Z",
+        "endDate": "2023-04-17T00:00:00.000Z",
         "place": "경상북도 상주시",
         "image": "/images/generation/cover/generation-cover-19.webp",
-        "videoUrl": "https://www.youtube.com/embed/Gd4rN89_pJw",
+        "videoUrl": "https://www.youtube.com/embed/W81mWInwz9c",
         "isDisplay": true,
         "sequence": 19
     },
