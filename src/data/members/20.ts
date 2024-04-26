@@ -8,5 +8,25 @@ export const member_20 = {
     "videoUrl": "https://www.youtube.com/embed/ze6Zrnp2Pag",
     "isDisplay": true,
     "sequence": 20,
-    "members": []
+    "members": [
+        {
+            "id": 124,
+            "gender": "male",
+            "name": "영수",
+            "yearOfBirth": null,
+            "job": "소아과 의사",
+            "school": null,
+            "address": null,
+            "car": null,
+            "moreInfo": null,
+            "image": "/images/member/20/20기-영수.webp",
+            "instgramUrl": null,
+            "youtubeUrl": null,
+            "shopUrl": null,
+            "generationId": 20,
+            "likeCount": 0,
+            "dislikeCount": 0,
+            "sequence": 1
+        },
+    ]
 }
