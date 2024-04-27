@@ -128,7 +128,7 @@ export const member_20 = {
             "gender": "female",
             "name": "영숙",
             "yearOfBirth": null,
-            "job": null,
+            "job": "대학교 조교수(?)",
             "school": null,
             "address": "대원외고",
             "car": "르노 SM5",
@@ -147,7 +147,7 @@ export const member_20 = {
             "gender": "female",
             "name": "정숙",
             "yearOfBirth": null,
-            "job": null,
+            "job": "LG전자 연구원(?)",
             "school": null,
             "address": null,
             "car": "벤츠 C200 쿠페",
@@ -166,8 +166,8 @@ export const member_20 = {
             "gender": "female",
             "name": "순자",
             "yearOfBirth": null,
-            "job": null,
-            "school": "김해외고 졸업",
+            "job": "초등학교 교사(?)",
+            "school": "김해외고 졸업, 서울교대 졸업(?)",
             "address": "진주 고향",
             "car": "쉐보레 트렉스 크로스오버",
             "moreInfo": "서울 강동구 자가 보유",
@@ -185,7 +185,7 @@ export const member_20 = {
             "gender": "female",
             "name": "영자",
             "yearOfBirth": null,
-            "job": null,
+            "job": "롯데 계열사 근무(?)",
             "school": "연세대 경영학과 졸업",
             "address": null,
             "car": null,
@@ -223,7 +223,7 @@ export const member_20 = {
             "gender": "female",
             "name": "현숙",
             "yearOfBirth": null,
-            "job": "약사",
+            "job": "아모레퍼시픽 연구원(?)",
             "school": "서울대 약대 학/석사 졸업",
             "address": null,
             "car": null,
@@ -239,11 +239,3 @@ export const member_20 = {
         }
     ]
 }
-
-
-// - 광수 : 카이스트 연구원(?), 서울 과학고, 연세대
-// - 상철 : BMW 3시리즈, 광주 고향, 삼성전자(?)
-//
-// - 영숙 : 르노 SM5, 대원외고
-// - 정숙 : 벤츠 C200 쿠페
-// - 순자 : 쉐보레 트렉스 크로스오버, 진주 고향, 김해외고졸업, 서울 강동구 자가 보유
