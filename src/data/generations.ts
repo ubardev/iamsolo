@@ -4,7 +4,7 @@ export const generationsData = [
         "name": "20기",
         "startDate": "2024-04-24T00:00:00.000Z",
         "endDate": "9999-12-31T00:00:00.000Z",
-        "place": "구미",
+        "place": "경북 구미",
         "image": "/images/generation/cover/generation-cover-20.webp",
         "videoUrl": "https://www.youtube.com/embed/ofMm9m-cHUs",
         "isDisplay": true,
