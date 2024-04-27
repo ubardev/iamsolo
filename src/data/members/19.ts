@@ -5,7 +5,7 @@ export const member_19 = {
     "endDate": "9999-12-31T00:00:00.000Z",
     "place": "경상북도 상주시",
     "image": "/images/generation/cover/generation-cover-19.webp",
-    "videoUrl": "https://www.youtube.com/embed/jEZpPFKqZuY",
+    "videoUrl": "https://www.youtube.com/embed/3OAL3zAZogo",
     "isDisplay": true,
     "sequence": 19,
     "members": [
