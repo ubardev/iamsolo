@@ -125,7 +125,7 @@ export const member_20 = {
         },
         {
             "id": 130,
-            "gender": "male",
+            "gender": "female",
             "name": "영숙",
             "yearOfBirth": null,
             "job": null,
@@ -144,7 +144,7 @@ export const member_20 = {
         },
         {
             "id": 131,
-            "gender": "male",
+            "gender": "female",
             "name": "정숙",
             "yearOfBirth": null,
             "job": null,
@@ -163,7 +163,7 @@ export const member_20 = {
         },
         {
             "id": 132,
-            "gender": "male",
+            "gender": "female",
             "name": "순자",
             "yearOfBirth": null,
             "job": null,
@@ -182,7 +182,7 @@ export const member_20 = {
         },
         {
             "id": 133,
-            "gender": "male",
+            "gender": "female",
             "name": "영자",
             "yearOfBirth": null,
             "job": null,
@@ -201,7 +201,7 @@ export const member_20 = {
         },
         {
             "id": 134,
-            "gender": "male",
+            "gender": "female",
             "name": "옥순",
             "yearOfBirth": null,
             "job": "구글 소프트웨어 엔지니어",
@@ -209,7 +209,7 @@ export const member_20 = {
             "address": null,
             "car": null,
             "moreInfo": "7기 옥순 동생",
-            "image": "/images/member/20/20기-영자.webp",
+            "image": "/images/member/20/20기-옥순.webp",
             "instgramUrl": null,
             "youtubeUrl": null,
             "shopUrl": null,
@@ -220,7 +220,7 @@ export const member_20 = {
         },
         {
             "id": 135,
-            "gender": "male",
+            "gender": "female",
             "name": "현숙",
             "yearOfBirth": null,
             "job": "약사",
@@ -228,7 +228,7 @@ export const member_20 = {
             "address": null,
             "car": null,
             "moreInfo": null,
-            "image": "/images/member/20/20기-영자.webp",
+            "image": "/images/member/20/20기-현숙.webp",
             "instgramUrl": null,
             "youtubeUrl": null,
             "shopUrl": null,
