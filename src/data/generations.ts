@@ -1,5 +1,16 @@
 export const generationsData = [
     {
+        "id": 22,
+        "name": "22기",
+        "startDate": "2024-08-14T00:00:00.000Z",
+        "endDate": "9999-12-31T00:00:00.000Z",
+        "place": "경상남도 통영시",
+        "image": "/images/generation/cover/generation-cover-22.webp",
+        "videoUrl": "https://www.youtube.com/embed/zkxL1knRRmU",
+        "isDisplay": true,
+        "sequence": 22
+    },
+    {
         "id": 21,
         "name": "21기",
         "startDate": "2024-06-26T00:00:00.000Z",
