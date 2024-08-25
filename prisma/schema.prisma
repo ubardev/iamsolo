@@ -150,7 +150,7 @@ model Member {
   car String?
   moreInfo String?
   image String?
-  instgramUrl String?
+  instagram String?
   youtubeUrl String?
   shopUrl String?
   generation Generation @relation(fields: [generationId], references: [id], onDelete: Cascade)

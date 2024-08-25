@@ -111,7 +111,7 @@ export default function Members({ generationWithMembers }: IProps) {
                   <NameAndLinks
                     ganerationName={name}
                     memberName={member.name}
-                    instgramUrl={member.instgramUrl ?? undefined}
+                    instagram={member.instagram ?? undefined}
                     youtubeUrl={member.youtubeUrl ?? undefined}
                     shopUrl={member.shopUrl ?? undefined}
                   />

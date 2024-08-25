@@ -8,7 +8,7 @@ import LinkIcon from '@/components/ui/icons/LinkIcon';
 interface IProps {
   ganerationName: string;
   memberName: string;
-  instgramUrl?: string;
+  instagram?: string;
   youtubeUrl?: string;
   shopUrl?: string;
 }
@@ -16,15 +16,15 @@ interface IProps {
 export default function NameAndLinks({
   ganerationName,
   memberName,
-  instgramUrl,
+  instagram,
   youtubeUrl,
   shopUrl,
 }: IProps) {
   return (
     <div className="flex items-center text-lg">
       <div>{memberName}</div>
-      {instgramUrl && (
-        <Link href={instgramUrl} target="_blank">
+      {instagram && (
+        <Link href={`https://www.instagram.com/${instagram}`} target="_blank">
           <div className="ml-2">
             {
               <InstagramIcon

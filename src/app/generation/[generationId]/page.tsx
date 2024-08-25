@@ -9,6 +9,7 @@ import type { Metadata, ResolvingMetadata } from 'next';
 
 // import { useQuery } from '@tanstack/react-query';
 
+import {member_11} from "@/data/members/11";
 import {member_12} from "@/data/members/12";
 import {member_13} from "@/data/members/13";
 import {member_14} from "@/data/members/14";
@@ -60,6 +61,9 @@ export default async function Generation({ params: { generationId } }: IProps) {
   let generationWithMembers: any;
 
   switch (generationId) {
+    case '11':
+      generationWithMembers = member_11;
+      break;
     case '12':
       generationWithMembers = member_12;
       break;

@@ -114,10 +114,21 @@ export const generationsData = [
         "name": "12기",
         "startDate": "2022-12-21T00:00:00.000Z",
         "endDate": "2023-02-08T00:00:00.000Z",
-        "place": "경기 여주시",
+        "place": "경기도 여주 스카이밸리CC 가든하임",
         "image": "/images/generation/cover/generation-cover-12.webp",
         "videoUrl": "https://www.youtube.com/embed/yjsh9SXkF5Q",
         "isDisplay": true,
         "sequence": 12
+    },
+    {
+        "id": 11,
+        "name": "11기",
+        "startDate": "2022-11-03T00:00:00.000Z",
+        "endDate": "2022-12-15T00:00:00.000Z",
+        "place": "동두천 니지모리스튜디오",
+        "image": "/images/generation/cover/generation-cover-11.webp",
+        "videoUrl": "https://www.youtube.com/embed/cNz_y7U5A5U",
+        "isDisplay": true,
+        "sequence": 11
     }
 ]
