@@ -9,18 +9,19 @@ import type { Metadata, ResolvingMetadata } from 'next';
 
 // import { useQuery } from '@tanstack/react-query';
 
-import {member_11} from "@/data/members/11";
-import {member_12} from "@/data/members/12";
-import {member_13} from "@/data/members/13";
-import {member_14} from "@/data/members/14";
-import {member_15} from "@/data/members/15";
-import {member_16} from "@/data/members/16";
-import {member_17} from "@/data/members/17";
-import {member_18} from "@/data/members/18";
-import {member_19} from "@/data/members/19";
-import {member_20} from "@/data/members/20";
-import {member_21} from "@/data/members/21";
-import {member_22} from "@/data/members/22";
+import { member_11 } from '@/data/members/11';
+import { member_12 } from '@/data/members/12';
+import { member_13 } from '@/data/members/13';
+import { member_14 } from '@/data/members/14';
+import { member_15 } from '@/data/members/15';
+import { member_16 } from '@/data/members/16';
+import { member_17 } from '@/data/members/17';
+import { member_18 } from '@/data/members/18';
+import { member_19 } from '@/data/members/19';
+import { member_20 } from '@/data/members/20';
+import { member_21 } from '@/data/members/21';
+import { member_22 } from '@/data/members/22';
+import { member_23 } from '@/data/members/23';
 
 interface IProps {
   params: {
@@ -97,11 +98,12 @@ export default async function Generation({ params: { generationId } }: IProps) {
     case '22':
       generationWithMembers = member_22;
       break;
+    case '23':
+      generationWithMembers = member_23;
+      break;
     default:
       break;
   }
-
-
 
   const { name } = generationWithMembers;
 
