@@ -1,4 +1,4 @@
-export const member_23 = {
+export const member_24 = {
   id: 24,
   name: '24기',
   startDate: '2024-12-25T00:00:00.000Z',
@@ -111,8 +111,8 @@ export const member_23 = {
       yearOfBirth: '',
       job: '',
       school: '',
-      address: '',
-      car: '',
+      address: '경기도 용인 거주',
+      car: '아우디 Q5',
       moreInfo: null,
       image: '/images/member/23/23기-상철.webp',
       instagram: null,
